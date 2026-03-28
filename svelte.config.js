@@ -19,9 +19,9 @@ const config = {
 		adapter: adapter({
 			pages: 'build/www',
 			assets: 'build/www',
-			fallback: 'index.html', // Essential for Single Page App (SPA) mode
-			precompress: false,
-			strict: false
+			fallback: undefined // Essential for Single Page App (SPA) mode
+			// precompress: false,
+			// strict: false
 		}),
 		csp: {
 			mode: 'hash', // SvelteKit will generate hashes for all inline scripts
