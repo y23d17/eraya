@@ -4,7 +4,16 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 
+	import '@/lib';
+
 	let { children } = $props();
+
+	// eslint-disable-next-line svelte/valid-prop-names-in-kit-pages
+	export const ssr = false;
+	// eslint-disable-next-line svelte/valid-prop-names-in-kit-pages
+	export const trailingSlash = 'always'; // Crucial for static environments
+	// eslint-disable-next-line svelte/valid-prop-names-in-kit-pages
+	export const prerender = true;
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>

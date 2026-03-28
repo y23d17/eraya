@@ -1,6 +1,7 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { relative, sep } from 'node:path';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,8 +15,27 @@ const config = {
 			return isExternalLibrary ? undefined : true;
 		}
 	},
-	kit: { adapter: adapter() },
-	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
+	kit: {
+		adapter: adapter({
+			pages: 'build/www',
+			assets: 'build/www',
+			fallback: 'index.html', // Essential for Single Page App (SPA) mode
+			precompress: false,
+			strict: false
+		}),
+		csp: {
+			mode: 'hash', // SvelteKit will generate hashes for all inline scripts
+			directives: {
+				'script-src': ['self', 'unsafe-eval', 'https://ssl.gstatic.com'],
+				'object-src': ['none'],
+				'base-uri': ['self']
+			}
+		},
+		paths: {
+			relative: true
+		}
+	},
+	preprocess: [mdsvex({ extensions: ['.svx', '.md'] }), vitePreprocess()],
 	extensions: ['.svelte', '.svx', '.md']
 };
 
