@@ -5,6 +5,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 
 	import '@/lib';
+	import BackgroundColor from '@/components/global/BackgroundColor.svelte';
 
 	let { children } = $props();
 
@@ -24,3 +25,5 @@
 		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
 	{/each}
 </div>
+
+<BackgroundColor />
