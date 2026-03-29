@@ -4,7 +4,7 @@
 	}
 
 	:global(.bg-color-lavender) {
-		background: linear-gradient(180deg, #ffd34d 0%, #f9a13d 100%);
+		background: linear-gradient(180deg, #d1c4e9 0%, #b39ddb 100%);
 	}
 
 	:global(.bg-color-sky) {
@@ -12,6 +12,6 @@
 	}
 
 	:global(.bg-color-sunny) {
-		background: linear-gradient(180deg, #d1c4e9 0%, #b39ddb 100%);
+		background: linear-gradient(180deg, #ffd34d 0%, #f9a13d 100%);
 	}
 </style>

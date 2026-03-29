@@ -6,6 +6,7 @@
 
 	import '@/lib';
 	import BackgroundColor from '@/components/global/BackgroundColor.svelte';
+	import SystemCore from '@/components/global/SystemCore.svelte';
 
 	let { children } = $props();
 </script>
@@ -19,4 +20,5 @@
 	{/each}
 </div>
 
+<SystemCore />
 <BackgroundColor />
