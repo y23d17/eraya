@@ -19,7 +19,7 @@ const config = {
 		adapter: adapter({
 			pages: 'build/www',
 			assets: 'build/www',
-			fallback: undefined // Essential for Single Page App (SPA) mode
+			fallback: 'index.html' // Essential for Single Page App (SPA) mode
 			// precompress: false,
 			// strict: false
 		}),
