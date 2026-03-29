@@ -5,7 +5,7 @@
 	import Books from '@/lib/assets/images/books.png';
 </script>
 
-<nav class="bottom">
+<nav class="bottom bg-color-deep-space">
 	<a href="/home">
 		<button class="circle transparent">
 			<img src={Home} alt="home" />
