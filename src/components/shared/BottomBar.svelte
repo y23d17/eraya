@@ -3,37 +3,54 @@
 	import Lessons from '@/lib/assets/images/lesson.png';
 	import Games from '@/lib/assets/images/games.png';
 	import Books from '@/lib/assets/images/books.png';
+	import { goto } from '$app/navigation';
 </script>
 
 <nav class="bottom bg-color-deep-space">
-	<a href="/home">
-		<button class="circle transparent">
+	<div class="wave max">
+		<a href="/home" class="vertical">
 			<img src={Home} alt="home" />
-		</button>
-		<div>Home</div>
-	</a>
+			<div>Home</div>
+		</a>
+	</div>
 
-	<a href="/lessons">
-		<button class="circle transparent">
+	<div class="wave max">
+		<a href="/lessons" class="vertical">
 			<img src={Lessons} alt="lessons" />
-		</button>
+			<div>Lessons</div>
+		</a>
+	</div>
 
-		<div>Lessons</div>
-	</a>
-
-	<a href="/games">
-		<button class="circle transparent">
+	<div class="wave max">
+		<a href="/games" class="vertical">
 			<img src={Games} alt="games" />
-		</button>
+			<div>Games</div>
+		</a>
+	</div>
 
-		<div>Games</div>
-	</a>
-
-	<a href="/library">
-		<button class="circle transparent">
+	<div class="wave max">
+		<a href="/library" class="vertical">
 			<img src={Books} alt="books" />
-		</button>
-
-		<div>Library</div>
-	</a>
+			<div>Library</div>
+		</a>
+	</div>
 </nav>
+
+<style>
+	nav {
+		overflow: hidden;
+	}
+	nav > a {
+		padding: auto;
+		margin: 0;
+	}
+
+	nav > div > a > img {
+		width: 48px;
+		height: 48px;
+	}
+
+	a > div {
+		font-family: Fredoka Regular;
+	}
+</style>
