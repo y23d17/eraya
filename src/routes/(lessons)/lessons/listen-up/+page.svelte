@@ -6,27 +6,27 @@
 
 	const messages = [
 		{
-			title: 'Paminawa Kam',
+			title: 'Pamatia ka mayad',
 			subtitle: 'Listen carefully',
 			icon: '👂',
 			bg: '#42a5f5'
 		},
 		{
-			title: 'Dumara Kamo',
+			title: 'Magtipon Kamo',
 			subtitle: 'Gather around',
 			icon: '📢',
 			bg: '#66bb6a' // Green
 		},
 		{
-			title: 'Paminawa Kam Sanda',
-			subtitle: 'Pay attention',
+			title: 'Dali ron',
+			subtitle: 'Hurry up',
 			icon: '🤔',
 			bg: '#ffa726'
 		},
 		{
-			title: 'Tigam Kamo',
-			subtitle: 'Take note',
-			icon: '📝',
+			title: 'Palihog mag tindog ang tanan',
+			subtitle: 'Please, Stand-up',
+			icon: '🧍',
 			bg: '#ba68c8' // Purple
 		}
 	];
@@ -119,6 +119,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1.1;
+		font-family: Fredoka Regular;
 	}
 
 	.subtitle {
@@ -128,6 +129,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 1rem;
+		font-family: Quicksand Bold;
 	}
 
 	.ui-layer {

@@ -49,7 +49,7 @@
 
 		<section class="grid">
 			<div class="s12">
-				<h4>Everyday Stuff</h4>
+				<h4>LEVEL 1</h4>
 			</div>
 			<ItemCard
 				icon={Greeting}
@@ -79,7 +79,7 @@
 
 		<section class="grid">
 			<div class="s12">
-				<h4>Common Skills</h4>
+				<h4>LEVEL 2</h4>
 			</div>
 			<ItemCard
 				icon={Greeting}
@@ -133,7 +133,7 @@
 
 		<section class="grid">
 			<div class="s12">
-				<h4>Useful Skills</h4>
+				<h4>LEVEL 3</h4>
 			</div>
 			<ItemCard
 				icon={Sharing}
@@ -182,7 +182,7 @@
 				<div class="s12">
 					<center><img src={Question} alt="question" width={96} /></center>
 					<h5 id="er-quiz-title">Test Your Knowledge!</h5>
-					<div id="er-quiz-description">Answer 10 fun questions.</div>
+					<div id="er-quiz-description">Answer fun questions.</div>
 					<div class="large-space"></div>
 				</div>
 				<button id="er-quiz-btn" class="no-round large s12" onclick={() => goto('/lessons/quiz')}>

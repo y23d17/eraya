@@ -50,3 +50,9 @@
 		</section>
 	</div>
 </main>
+
+<style>
+	div > h3 {
+		font-family: Fredoka Regular;
+	}
+</style>

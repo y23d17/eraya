@@ -11,14 +11,14 @@
 			name: 'Salamat',
 			english: 'Thank You',
 			icon: '🙏',
-			phrase: 'Salamat sa imo bulig.',
+			phrase: 'Salamat sa imong bulig.',
 			bg: '#ffb74d' // Warm Orange
 		},
 		{
 			name: 'Palihog',
 			english: 'Please',
 			icon: '🙋‍♂️',
-			phrase: 'Palihog, pwedeng mangayo?',
+			phrase: 'Palihog, sarado ang gawang?',
 			bg: '#81c784' // Kind Green
 		},
 		{
@@ -29,10 +29,10 @@
 			bg: '#4fc3f7' // Soft Blue
 		},
 		{
-			name: 'Tabi',
+			name: 'Pabinit',
 			english: 'Excuse Me',
 			icon: '🚶',
-			phrase: 'Tabi lang po, maagi ako.',
+			phrase: 'Pabinit anay, maagi ako.',
 			bg: '#ba68c8' // Polite Purple
 		}
 	];
@@ -95,7 +95,6 @@
 		align-items: center;
 		justify-content: center;
 		transition: background-color 0.8s ease;
-		font-family: 'Quicksand', sans-serif;
 		overflow: hidden;
 		position: relative;
 	}
@@ -134,6 +133,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -143,6 +143,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 1rem;
+		font-family: Quicksand Bold;
 	}
 
 	.usage-context {

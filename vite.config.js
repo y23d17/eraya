@@ -13,6 +13,17 @@ export default defineConfig({
 		devtoolsJson(),
 		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' })
 	],
+	base: './',
+	build: {
+		rollupOptions: {
+			output: {
+				// This changes '_app/immutable/...' to 'app/immutable/...'
+				assetFileNames: 'app/immutable/assets/[name]-[hash][extname]',
+				chunkFileNames: 'app/immutable/chunks/[name]-[hash].js',
+				entryFileNames: 'app/immutable/entry/[name]-[hash].js'
+			}
+		}
+	},
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src')

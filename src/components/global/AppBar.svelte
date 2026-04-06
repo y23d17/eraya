@@ -1,5 +1,6 @@
 <script>
-	import Brand from '@/lib/assets/images/eraya-brand.png';
+	import Brand from '@/lib/assets/images/eraya.png';
+	import Logo from '@/lib/assets/images/eraya-brand.png';
 	import Exit from '@/lib/assets/images/exit.png';
 
 	let { title, subtitle } = $props();
@@ -8,14 +9,23 @@
 <header class="bg-color-ice-cream">
 	<nav>
 		<button class="circle transparent">
-			<img src={Brand} alt="brand logo" />
+			<img src={Logo} alt="brand logo" />
 		</button>
 
 		<div class="max">
-			<h2>{title || 'Title?'}</h2>
+			<img src={Brand} alt="brand" width={180} />
 		</div>
 
-		<button class="circle transparent">
+		<button
+			class="circle transparent"
+			onclick={() => {
+				if (navigator.app) {
+					navigator.app.exitApp();
+				} else if (navigator.device) {
+					navigator.device.exitApp();
+				}
+			}}
+		>
 			<img src={Exit} alt="exit" />
 		</button>
 	</nav>
@@ -35,5 +45,10 @@
 		z-index: 99;
 		border-bottom-left-radius: 1.2rem;
 		border-bottom-right-radius: 1.2rem;
+	}
+
+	div > h3 {
+		font-family: Fredoka Regular;
+		color: #333333;
 	}
 </style>

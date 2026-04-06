@@ -15,17 +15,17 @@
 			bg: '#81c784' // Fresh Green
 		},
 		{
-			name: 'Sira',
+			name: 'Dapli',
 			english: 'Viand / Dish',
 			icon: '🍗',
-			example: 'Manamit nga sira.',
+			example: 'Manamit nga dapli.',
 			bg: '#ffb74d' // Warm Orange
 		},
 		{
-			name: 'Suta',
+			name: 'Sabaw',
 			english: 'Soup',
 			icon: '🥣',
-			example: 'Mainit nga suta.',
+			example: 'Mainit nga sabaw.',
 			bg: '#4fc3f7' // Soft Blue
 		},
 		{
@@ -134,6 +134,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -143,6 +144,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 0.9rem;
+		font-family: Quicksand Bold;
 	}
 
 	.example-box {
@@ -154,6 +156,7 @@
 		font-size: 1.3rem;
 		backdrop-filter: blur(8px);
 		border: 2px solid rgba(255, 255, 255, 0.3);
+		font-family: Quicksand Bold;
 	}
 
 	/* Nav Controls */

@@ -11,21 +11,21 @@
 			name: 'Malipayon',
 			english: 'Happy',
 			icon: '😊',
-			phrase: 'Malipayon ako subong.',
+			phrase: 'Malipayon ako kadya.',
 			bg: '#ffca28' // Bright Yellow
 		},
 		{
-			name: 'Masulub-on',
+			name: 'Masubo',
 			english: 'Sad',
 			icon: '😢',
-			phrase: 'Masulub-on ang akon abyan.',
+			phrase: 'Masubo ang akon abyan.',
 			bg: '#64b5f6' // Calm Blue
 		},
 		{
-			name: 'Akig',
+			name: 'Ugot',
 			english: 'Angry',
 			icon: '😡',
-			phrase: 'Indi mag-akig sa iya.',
+			phrase: 'Indi mag-ugot kana.',
 			bg: '#ef5350' // Angry Red
 		},
 		{
@@ -134,6 +134,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1.1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -143,6 +144,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 1rem;
+		font-family: Quicksand Bold;
 	}
 
 	.usage-context {
@@ -155,6 +157,7 @@
 		font-style: italic;
 		backdrop-filter: blur(8px);
 		border: 2px solid rgba(255, 255, 255, 0.3);
+		font-family: Quicksand Bold;
 	}
 
 	/* UI Navigation */

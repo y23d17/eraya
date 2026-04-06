@@ -109,6 +109,7 @@
 		box-shadow: 0 10px 0px rgba(0, 0, 0, 0.1);
 		border: 8px solid #fce4ec;
 		min-width: 280px;
+		font-family: Fredoka Regular;
 	}
 
 	.native-text {
@@ -125,6 +126,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 0.9rem;
+		font-family: Fredoka Regular;
 	}
 
 	.example-box {
@@ -135,6 +137,7 @@
 		color: white;
 		font-size: 1.2rem;
 		backdrop-filter: blur(4px);
+		font-family: Quicksand Bold;
 	}
 
 	.controls {

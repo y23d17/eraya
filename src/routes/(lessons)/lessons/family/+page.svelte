@@ -10,7 +10,7 @@
 			name: 'Nanay',
 			english: 'Mother',
 			icon: '👩‍🍼',
-			example: 'Si Nanay ang naga-luto.',
+			example: 'Si Nanay ang naga-raha.',
 			bg: '#f06292' // Common Skills Pink
 		},
 		{
@@ -21,10 +21,10 @@
 			bg: '#4fc3f7' // Light Blue
 		},
 		{
-			name: 'Lolo / Lola',
+			name: 'Lola / Lolo',
 			english: 'Grandparents',
 			icon: '👵👴',
-			example: 'Palangga ko si Lolo kag Lola.',
+			example: 'Palangga ko si Lola kag si Lolo.',
 			bg: '#81c784' // Soft Green
 		}
 	];
@@ -125,6 +125,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -134,6 +135,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 0.9rem;
+		font-family: Quicksand Bold;
 	}
 
 	.example-box {
@@ -144,6 +146,7 @@
 		color: white;
 		font-size: 1.2rem;
 		backdrop-filter: blur(4px);
+		font-family: Quicksand Bold;
 	}
 
 	/* Nav Controls */

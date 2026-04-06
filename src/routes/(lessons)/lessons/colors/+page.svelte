@@ -10,21 +10,21 @@
 			name: 'Pula',
 			english: 'Red',
 			icon: '🍎',
-			example: 'Lakatan / Saging (Ripe Banana/Apple)',
+			example: 'Mansanas (Apple)',
 			bg: '#ef5350'
 		},
 		{
 			name: 'Asul',
 			english: 'Blue',
 			icon: '🦋',
-			example: 'Lapyaw (Ocean/Butterfly)',
+			example: 'Alibangbang (Butterfly)',
 			bg: '#42a5f5'
 		},
 		{
-			name: 'Dulaw',
+			name: 'Kanaryo',
 			english: 'Yellow',
 			icon: '🌻',
-			example: 'Adlaw (Sun)',
+			example: 'Sunflower',
 			bg: '#ffca28'
 		}
 	];
@@ -52,7 +52,7 @@
 	</div>
 
 	<div class="example-box">
-		<p>Ang duag sang: <strong>{item.example}</strong></p>
+		<p>Parehas kang: <strong>{item.example}</strong></p>
 	</div>
 {/snippet}
 

@@ -12,14 +12,14 @@
 			english: 'To Share',
 			icon: '🤝',
 			theme: '#ffb74d', // Warm Orange for friendship
-			phrase: 'Paambit sang akon hampanganan.'
+			phrase: 'Paambit kang akon siripalan.'
 		},
 		{
 			name: 'Tugro',
 			english: 'To Give',
 			icon: '🎁',
 			theme: '#81c784', // Kind Green
-			phrase: 'I-tugro ini sa imo abyan.'
+			phrase: 'I-tugro dya sa imong libayon.'
 		},
 		{
 			name: 'Bulig',
@@ -132,6 +132,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -141,6 +142,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 1rem;
+		font-family: Quicksand Bold;
 	}
 
 	.usage-context {
@@ -152,6 +154,7 @@
 		font-size: 1.2rem;
 		font-style: italic;
 		backdrop-filter: blur(5px);
+		font-family: Quicksand Bold;
 	}
 
 	/* UI Navigation */

@@ -114,6 +114,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.translation {
@@ -122,6 +123,7 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		font-size: 0.9rem;
+		font-family: Quicksand Bold;
 	}
 
 	.description {
@@ -131,6 +133,7 @@
 		background: rgba(0, 0, 0, 0.2);
 		padding: 10px 20px;
 		border-radius: 20px;
+		font-family: Quicksand Bold;
 	}
 
 	/* Bottom Navigation Area */

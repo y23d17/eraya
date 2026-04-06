@@ -35,7 +35,6 @@
 
 		<section class="grid">
 			<GameCard title="Color Fusion" navigation="games/color-fusion" />
-			<GameCard title="Find It!" navigation="games/find-it" />
 		</section>
 	</div>
 </main>

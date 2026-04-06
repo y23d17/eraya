@@ -19,20 +19,32 @@ const config = {
 		adapter: adapter({
 			pages: 'build/www',
 			assets: 'build/www',
-			fallback: 'index.html' // Essential for Single Page App (SPA) mode
-			// precompress: false,
-			// strict: false
+			fallback: 'index.html', // Essential for Single Page App (SPA) mode
+			precompress: false,
+			strict: true
 		}),
 		csp: {
 			mode: 'hash', // SvelteKit will generate hashes for all inline scripts
 			directives: {
-				'script-src': ['self', 'unsafe-eval', 'https://ssl.gstatic.com'],
-				'object-src': ['none'],
-				'base-uri': ['self']
+				'default-src': ['self', 'http://localhost', 'https://localhost'],
+				'script-src': [
+					'self',
+					'unsafe-inline',
+					'unsafe-eval',
+					'http://localhost',
+					'https://localhost',
+					'https://ssl.gstatic.com'
+				],
+				'img-src': ['self', 'data:', 'http://localhost', 'https://localhost'],
+				'style-src': ['self', 'unsafe-inline'],
+				'object-src': ['none']
 			}
 		},
+		appDir: 'app',
 		paths: {
-			relative: true
+			relative: true,
+			base: '',
+			assets: ''
 		}
 	},
 	preprocess: [mdsvex({ extensions: ['.svx', '.md'] }), vitePreprocess()],

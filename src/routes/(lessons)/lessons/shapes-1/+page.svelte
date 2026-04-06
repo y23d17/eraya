@@ -25,7 +25,7 @@
 			name: 'Triyangulo',
 			english: 'Triangle',
 			icon: '🔺',
-			example: 'Panyô (Handkerchief)',
+			example: 'Apa (Ice Cream Cone)',
 			bg: '#f06292' // Pink
 		}
 	];
@@ -53,7 +53,7 @@
 	</div>
 
 	<div class="example-box">
-		<p>Parehas sang: <strong>{item.example}</strong></p>
+		<p>Parehas Kang: <strong>{item.example}</strong></p>
 	</div>
 {/snippet}
 
@@ -124,6 +124,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -133,6 +134,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 0.9rem;
+		font-family: Quicksand Bold;
 	}
 
 	.example-box {
@@ -142,6 +144,7 @@
 		border-radius: 20px;
 		color: white;
 		font-size: 1.1rem;
+		font-family: Quicksand Book;
 	}
 
 	/* Navigation UI */

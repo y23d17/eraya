@@ -12,7 +12,9 @@
 		{ digit: '5', native: 'Lima', objects: 5, item: '🎈' },
 		{ digit: '6', native: 'Anum', objects: 6, item: ' 🥚' },
 		{ digit: '7', native: 'Pito', objects: 7, item: '🚩' },
-		{ digit: '8', native: 'Walo', objects: 8, item: '🎱' }
+		{ digit: '8', native: 'Walo', objects: 8, item: '🎱' },
+		{ digit: '9', native: 'Siyam', objects: 9, item: '🎀' },
+		{ digit: '10', native: 'Pulo', objects: 10, item: '❤️' }
 	];
 
 	// 2. Derived Logic

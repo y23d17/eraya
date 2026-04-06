@@ -21,52 +21,10 @@
 			bg: '#66bb6a'
 		},
 		{
-			question: 'Ano ang ibig sabihin ng "Paminawa Kam Sanda"?',
-			options: ['Pay attention', 'Look up', 'Speak loudly', 'Write fast'],
-			answer: 'Pay attention',
+			question: 'What number is more than 5?',
+			options: ['Lima', 'Isara', 'Anum', 'Darwa'],
+			answer: 'Anum',
 			bg: '#ffa726'
-		},
-		{
-			question: 'Ano ang ibig sabihin ng "Tigam Kamo"?',
-			options: ['Take note', 'Forget it', 'Look back', 'Speak clearly'],
-			answer: 'Take note',
-			bg: '#ba68c8'
-		},
-		{
-			question: 'Kinaray-a question 5?',
-			options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-			answer: 'Option 1',
-			bg: '#42a5f5'
-		},
-		{
-			question: 'Kinaray-a question 6?',
-			options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-			answer: 'Option 2',
-			bg: '#66bb6a'
-		},
-		{
-			question: 'Kinaray-a question 7?',
-			options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-			answer: 'Option 3',
-			bg: '#ffa726'
-		},
-		{
-			question: 'Kinaray-a question 8?',
-			options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-			answer: 'Option 4',
-			bg: '#ba68c8'
-		},
-		{
-			question: 'Kinaray-a question 9?',
-			options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-			answer: 'Option 1',
-			bg: '#42a5f5'
-		},
-		{
-			question: 'Kinaray-a question 10?',
-			options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-			answer: 'Option 2',
-			bg: '#66bb6a'
 		}
 	];
 
@@ -186,7 +144,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1.1;
-		font-family: Quicksand Bold;
+		font-family: Fredoka Regular;
 		letter-spacing: 0;
 	}
 
@@ -199,6 +157,7 @@
 		background-color: #1fd83e;
 		font-family: Quicksand Bold;
 		color: #ffffff;
+		font-size: 1.8rem;
 	}
 
 	.option.selected {

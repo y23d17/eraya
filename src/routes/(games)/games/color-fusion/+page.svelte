@@ -119,7 +119,7 @@
 				class="color s3"
 				style="background-color: {color.color}"
 				draggable="true"
-				on:dragstart={handleDragStart(color)}
+				ondragstart={handleDragStart(color)}
 			>
 				{color.icon}
 			</div>
@@ -130,14 +130,14 @@
 		<div
 			class="box"
 			style="background-color: {box1 ? box1.color : ''}"
-			on:dragover={handleDragOver}
-			on:drop={handleDropBox(1)}
+			ondragover={handleDragOver}
+			ondrop={handleDropBox(1)}
 		></div>
 		<div
 			class="box"
 			style="background-color: {box2 ? box2.color : ''}"
-			on:dragover={handleDragOver}
-			on:drop={handleDropBox(2)}
+			ondragover={handleDragOver}
+			ondrop={handleDropBox(2)}
 		></div>
 	</div>
 	{#if result}
@@ -145,7 +145,7 @@
 			<p>{result}</p>
 		</div>
 		<div class="medium-space"></div>
-		<button class="reset-btn" on:click={reset}>Reset</button>
+		<button class="reset-btn" onclick={reset}>Reset</button>
 	{/if}
 </main>
 

@@ -12,7 +12,7 @@
 			english: 'One',
 			theme: '#f06292', // Primary Common Skills Pink
 			icon: '🍎',
-			phrase: 'Isara ka bilog nga saging'
+			phrase: 'Isara ka bilog nga mansanas'
 		},
 		{
 			digit: '2',
@@ -29,6 +29,62 @@
 			theme: '#4db6ac', // Teal variation
 			icon: '⭐',
 			phrase: 'Tatlo ka bituon'
+		},
+		{
+			digit: '4',
+			native: 'Apat',
+			english: 'Four',
+			theme: '#4db6ac', // Teal variation
+			icon: '🚗',
+			phrase: 'Apat ka sarakyan'
+		},
+		{
+			digit: '5',
+			native: 'Lima',
+			english: 'Five',
+			theme: '#4db6ac', // Teal variation
+			icon: '🎈',
+			phrase: 'Lima ka lobo'
+		},
+		{
+			digit: '6',
+			native: 'Anum',
+			english: 'Six',
+			theme: '#4db6ac', // Teal variation
+			icon: '🥚',
+			phrase: 'May anum ka bilog nga itlog'
+		},
+		{
+			digit: '7 ',
+			native: 'Pito',
+			english: 'Seven',
+			theme: '#4db6ac', // Teal variation
+			icon: '🚩',
+			phrase: 'May pito ka bilog nga bandera'
+		},
+		{
+			digit: '8',
+			native: 'Walo',
+			english: 'Eight',
+			theme: '#4db6ac', // Teal variation
+			icon: '🎱',
+			phrase: 'Walo ka bilog nga bola'
+		},
+		{
+			digit: '9',
+			native: 'Siyam',
+			english: 'Nine',
+			theme: '#4db6ac', // Teal variation
+			icon: '🎀',
+			phrase: 'Siyam ka ribbon'
+		},
+		{
+			digit: '10',
+			native: 'Pulo',
+			english: 'Ten',
+			theme: '#4db6ac', // Teal variation
+			icon: '❤️',
+			phrase: 'May pulo kabilog nga tagipusuon'
 		}
 	];
 
@@ -138,6 +194,7 @@
 		margin: 0;
 		color: #333;
 		letter-spacing: -2px;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -147,6 +204,7 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: 1rem;
+		font-family: Quicksand Bold;
 	}
 
 	.usage-context {
@@ -157,6 +215,7 @@
 		color: white;
 		font-size: 1.2rem;
 		font-style: italic;
+		font-family: Quicksand Bold;
 	}
 
 	/* Navigation Footer */
