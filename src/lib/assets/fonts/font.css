@@ -1,0 +1,42 @@
+/* CHEWY */
+@font-face {
+	src: url('./Chewy/Chewy.ttf');
+	font-family: Chewy;
+}
+
+/* FREDOKA OME */
+@font-face {
+	src: url('./Fredoka-One/Fredoka dingbats.otf');
+	font-family: Fredoka Dingbats;
+}
+
+@font-face {
+	src: url('./Fredoka-One/FredokaOne-Regular.otf');
+	font-family: Fredoka Regular;
+}
+
+/* QUICKSAND */
+@font-face {
+	src: url('./Quicksand/Quicksand_Bold.otf');
+	font-family: Quicksand Bold;
+}
+
+@font-face {
+	src: url('./Quicksand/Quicksand_Bold_Oblique.otf');
+	font-family: Quicksand Bold Oblique;
+}
+
+@font-face {
+	src: url('./Quicksand/Quicksand_Book.otf');
+	font-family: Quicksand Book;
+}
+
+@font-face {
+	src: url('./Quicksand/Quicksand_Dash.otf');
+	font-family: Quicksand Dash;
+}
+
+@font-face {
+	src: url('./Quicksand/Quicksand_Light.otf');
+	font-family: Quicksand Light;
+}

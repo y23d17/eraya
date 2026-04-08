@@ -10,7 +10,7 @@
 
 <AppBar title="eRaya" subtitle="Welcome Home!" />
 
-<main class="responsive no-padding">
+<main class="responsive no-padding page top active">
 	<div class="medium-space"></div>
 
 	<div class="padding vertical scroll">
@@ -23,10 +23,11 @@
 			</div>
 			<MenuCard
 				image={LessonsIcom}
-				class="bg-color-sky"
+				class="bg-color-electric-blue"
 				imageAlt="lesson icon"
 				title="Turun an"
 				translated="Lessons"
+				navigation="lessons"
 			/>
 
 			<MenuCard
@@ -35,6 +36,7 @@
 				imageAlt="games icon"
 				title="Sipal"
 				translated="Games"
+				navigation="games"
 			/>
 
 			<MenuCard
@@ -43,7 +45,14 @@
 				imageAlt="books "
 				title="Barasahan"
 				translated="Library"
+				navigation="library"
 			/>
 		</section>
 	</div>
 </main>
+
+<style>
+	div > h3 {
+		font-family: Fredoka Regular;
+	}
+</style>
