@@ -9,12 +9,21 @@ workflows:
         - qbot24
 
     scripts:
-      - name: 'Installing Node.js & CordovaSDK...'
+      - name: 'Installing Node'
         script: |
           npm install
           npm ci
           cvm install 9.0.0
           cvm use 9.0.0
+      - name: 'Running Vite Build'
+        script: |
+          npm dev
+      - name: 'Moving to build directory'
+        script: |
+          cd build
+      - name: 'Installing Cordova SDK'
+        script: |
+          npm install cordova@latest
       - name: 'Setup Android CordovaSDK project...'
         script: |
           cordova platform remove android --no-save
