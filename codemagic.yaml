@@ -5,10 +5,14 @@ workflows:
     instance_type: mac_mini_m2
 
     environment:
+      groups:
+        - qbot
       android_signing:
         - qbot24
-
     scripts:
+      - name: Set up keystore
+        script: |
+          echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
       - name: 'Installing Node'
         script: |
           npm install
