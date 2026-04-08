@@ -1,0 +1,38 @@
+workflows:
+  android:
+    name: 'Android CordovaSDK Dev Workflow'
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    environment:
+      android_signing:
+        - qbot24
+
+    scripts:
+      - name: 'Installing Node.js & CordovaSDK...'
+        script: |
+          npm install
+          npm ci
+          cvm install 9.0.0
+          cvm use 9.0.0
+      - name: 'Setup Android CordovaSDK project...'
+        script: |
+          cordova platform remove android --no-save
+          cordova platform add android \
+          --confirm \
+          --no-interactive \
+          --noresources
+      - name: 'Building Android app...'
+        script: cordova build android
+      - name: 'Signing APK...'
+        script: |
+          APK_PATH=$(find platforms/android/app/build/outputs/apk/debug -name "*.apk" | head -1)
+          jarsigner \
+          -sigalg SHA1withRSA \
+          -digestalg SHA1 \
+          -keystore $CM_KEYSTORE_PATH \
+          -storepass $CM_KEYSTORE_PASSWORD \
+          -keypass $CM_KEY_PASSWORD \
+          $APK_PATH $CM_KEY_ALIAS
+    artifacts:
+      - platforms/android/app/build/outputs/**/*.apk
