@@ -153,7 +153,7 @@
 		background: linear-gradient(135deg, #7480c9 0%, #303f9f 100%);
 	}
 
-	/* SPECIAL COLOR: RAINBOW */
+	/* SPECIAL background-color: RAINBOW */
 	:global(.bg-color-rainbow) {
 		background: linear-gradient(
 			135deg,
@@ -165,5 +165,64 @@
 			rgb(176, 77, 247),
 			rgb(252, 122, 252)
 		);
+	}
+
+	/* PLAYFUL COLORS */
+	:global(.color-playful-red) {
+		background-color: #f44336;
+	}
+	:global(.color-playful-pink) {
+		background-color: #e91e63;
+	}
+	:global(.color-playful-purple) {
+		background-color: #9c27b0;
+	}
+	:global(.color-playful-deep-purple) {
+		background-color: #673ab7;
+	}
+	:global(.color-playful-indigo) {
+		background-color: #3f51b5;
+	}
+	:global(.color-playful-blue) {
+		background-color: #2196f3;
+	}
+	:global(.color-playful-light-blue) {
+		background-color: #03a9f4;
+	}
+	:global(.color-playful-cyan) {
+		background-color: #00bcd4;
+	}
+	:global(.color-playful-teal) {
+		background-color: #009688;
+	}
+	:global(.color-playful-green) {
+		background-color: #4caf50;
+	}
+	:global(.color-playful-light-green) {
+		background-color: #8bc34a;
+	}
+	:global(.color-playful-lime) {
+		background-color: #cddc39;
+	}
+	:global(.color-playful-yellow) {
+		background-color: #ffeb3b;
+	}
+	:global(.color-playful-amber) {
+		background-color: #ffc107;
+	}
+	:global(.color-playful-orange) {
+		background-color: #ff9800;
+	}
+	:global(.color-playful-deep-orange) {
+		background-color: #ff5722;
+	}
+	:global(.color-playful-brown) {
+		background-color: #795548;
+	}
+	:global(.color-playful-grey) {
+		background-color: #9e9e9e;
+	}
+	:global(.color-playful-blue-grey) {
+		background-color: #607d8b;
 	}
 </style>

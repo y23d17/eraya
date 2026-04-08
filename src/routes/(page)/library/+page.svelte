@@ -9,6 +9,7 @@
 <AppBar title="eRaya" subtitle="Library" />
 
 <main class="responsive no-padding page top active">
+	<div class="medium-space"></div>
 	<div class="padding vertical-scrol">
 		<section class="grid">
 			<Banner
@@ -16,7 +17,7 @@
 				imageAlt="book"
 				title="Read more!"
 				subtitle="Expand your knowledge and learn more resources available."
-				class="s12 horizontal bg-color-taffy"
+				class="s12 horizontal bg-color-warm-amber"
 			/>
 		</section>
 

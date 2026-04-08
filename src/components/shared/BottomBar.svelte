@@ -3,46 +3,33 @@
 	import Lessons from '@/lib/assets/images/lesson.png';
 	import Games from '@/lib/assets/images/games.png';
 	import Books from '@/lib/assets/images/books.png';
-	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
+
+	let currentPage = $page.url.pathname;
+	$: currentPage = $page.url.pathname;
+
+	const navItems = [
+		{ name: 'Home', href: '/home', img: Home },
+		{ name: 'Lessons', href: '/lessons', img: Lessons },
+		{ name: 'Games', href: '/games', img: Games },
+		{ name: 'Library', href: '/library', img: Books }
+	];
 </script>
 
 <nav class="bottom bg-color-deep-space">
-	<div class="wave max">
-		<a href="/home" class="vertical">
-			<img src={Home} alt="home" />
-			<div>Home</div>
-		</a>
-	</div>
-
-	<div class="wave max">
-		<a href="/lessons" class="vertical">
-			<img src={Lessons} alt="lessons" />
-			<div>Lessons</div>
-		</a>
-	</div>
-
-	<div class="wave max">
-		<a href="/games" class="vertical">
-			<img src={Games} alt="games" />
-			<div>Games</div>
-		</a>
-	</div>
-
-	<div class="wave max">
-		<a href="/library" class="vertical">
-			<img src={Books} alt="books" />
-			<div>Library</div>
-		</a>
-	</div>
+	{#each navItems as item}
+		<div class="wave max">
+			<a href={item.href} class="vertical" class:active={currentPage === item.href}>
+				<img src={item.img} alt={item.name} />
+				<div>{item.name}</div>
+			</a>
+		</div>
+	{/each}
 </nav>
 
 <style>
 	nav {
 		overflow: hidden;
-	}
-	nav > a {
-		padding: auto;
-		margin: 0;
 	}
 
 	nav > div > a > img {
@@ -52,5 +39,9 @@
 
 	a > div {
 		font-family: Fredoka Regular;
+	}
+
+	.active {
+		color: red;
 	}
 </style>

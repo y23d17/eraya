@@ -25,6 +25,18 @@
 			options: ['Lima', 'Isara', 'Anum', 'Darwa'],
 			answer: 'Anum',
 			bg: '#ffa726'
+		},
+		{
+			question: 'What does you feel if you parent bought you an ice cream?`',
+			options: ['Hadluk', 'Masubo', 'Ugot', 'Malipayon'],
+			answer: 'Malipayon',
+			bg: '#ffeb3b'
+		},
+		{
+			question: 'What is the color of the sky?',
+			options: ['Pula', 'Asul', 'Berde', 'Itom'],
+			answer: 'Asul',
+			bg: '#2196f3'
 		}
 	];
 

@@ -4,14 +4,18 @@
 	import Pathway from '@/lib/assets/images/pathway.svg';
 	import Signage from '@/lib/assets/images/signage.svg';
 	import { goto } from '$app/navigation';
+	import { fade, fly, scale } from 'svelte/transition';
+	import { cubicIn, cubicInOut, elasticIn, elasticInOut } from 'svelte/easing';
+
+	let show = $state(true);
 </script>
 
-<main class="responsive no-padding">
-	<div id="sun-container">
-		<img src={Sun} alt="sun" id="sun" />
+<main class="responsive no-padding" in:fade={{ duration: 3000, easing: cubicIn }}>
+	<div id="sun-container" in:fly={{ y: 400, duration: 5000, easing: cubicInOut }}>
+		<img src={Sun} alt="sun" id="sun" in:fade={{ duration: 2000, easing: cubicInOut }} />
 	</div>
 
-	<div id="text-container">
+	<div id="text-container" in:scale={{ delay: 5000, duration: 500, easing: elasticInOut }}>
 		<h1>Mayad nga aga!</h1>
 	</div>
 
@@ -24,7 +28,11 @@
 			alt="signage"
 			width={320}
 			id="signage-btn"
-			onclick={() => goto('/lessons/greetings-1/good-afternoon')}
+			onclick={() =>
+				setTimeout(() => {
+					goto('/lessons/greetings-1/good-afternoon');
+				}, 300)}
+			in:fly={{ y: 500, delay: 6000, duration: 500, elasticIn }}
 		/>
 	</div>
 </main>
@@ -46,6 +54,7 @@
 		z-index: 2;
 		display: flex;
 		align-self: flex-start;
+		z-index: 0;
 	}
 
 	#sun {
@@ -109,6 +118,16 @@
 		}
 		50% {
 			transform: scale(1.1);
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
 		}
 	}
 </style>

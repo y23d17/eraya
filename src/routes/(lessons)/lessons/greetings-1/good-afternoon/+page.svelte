@@ -5,27 +5,54 @@
 	import Ocean from '@/lib/assets/images/ocean.svg';
 	import Sailboat from '@/lib/assets/images/boat.svg';
 	import { goto } from '$app/navigation';
+	import { fade, fly, scale } from 'svelte/transition';
+	import { cubicIn, cubicInOut, elasticIn } from 'svelte/easing';
 </script>
 
-<main class="responsive no-padding">
-	<img src={Bird1} alt="bird 1" id="bird-1" />
-	<img src={Bird2} alt="bird 2" id="bird-2" />
+<main class="responsive no-padding" in:fade={{ duration: 500, easing: cubicIn }}>
+	<img
+		src={Bird1}
+		alt="bird 1"
+		id="bird-1"
+		in:scale={{ duration: 500, delay: 1000, easing: cubicInOut }}
+	/>
 
-	<div id="text-container">
+	<img
+		src={Bird2}
+		alt="bird 2"
+		id="bird-2"
+		in:scale={{ duration: 500, delay: 1200, easing: cubicInOut }}
+	/>
+
+	<div id="text-container" in:scale={{ duration: 500, delay: 5000, easing: elasticIn }}>
 		<h1>Mayad nga hapon!</h1>
 	</div>
 
 	<div id="sun-wrapper">
-		<img src={Sunset} alt="sunset" id="sun" />
+		<img
+			src={Sunset}
+			alt="sunset"
+			id="sun"
+			in:fly={{ y: 300, duration: 1000, delay: 2000, easing: cubicIn }}
+		/>
 	</div>
 
 	<div id="ocean-wrapper">
-		<img src={Ocean} alt="ocean" id="ocean" />
+		<img
+			src={Ocean}
+			alt="ocean"
+			id="ocean"
+			in:fly={{ y: 500, duration: 500, delay: 1700, easing: cubicInOut }}
+		/>
 		<img
 			src={Sailboat}
 			alt="sailboat"
 			id="boat-btn"
-			onclick={() => goto('/lessons/greetings-1/good-evening')}
+			onclick={() =>
+				setTimeout(() => {
+					goto('/lessons/greetings-1/good-evening');
+				}, 300)}
+			in:fly={{ x: -3500, duration: 3000, delay: 2500, easing: cubicIn }}
 		/>
 	</div>
 </main>
@@ -111,6 +138,7 @@
 		transition: transform 0.3s ease;
 		filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
 		animation: bob 3s ease-in-out infinite;
+		z-index: 45;
 	}
 
 	#boat-btn:hover {

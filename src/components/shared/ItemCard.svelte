@@ -37,7 +37,7 @@
 		font-family: Quicksand Bold;
 		letter-spacing: 0;
 		color: #ffffff;
-		text-shadow: rgba(0, 0, 0, 0.5) 3px 3px;
+		text-shadow: rgba(0, 0, 0, 0.5) 1px 2px;
 	}
 
 	.er-image-container {

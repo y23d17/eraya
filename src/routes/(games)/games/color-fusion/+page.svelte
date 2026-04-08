@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { fly, fade, scale } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
-
 	let colors = [
 		{ name: 'Pula', color: '#ef5350', icon: 'Pula' },
 		{ name: 'Asul', color: '#42a5f5', icon: 'Asul' },
@@ -12,17 +11,6 @@
 	let box2 = $state(null);
 	let result = $state('');
 	let bg = $state('#fff');
-
-	const handleDrop = (box, color) => {
-		if (box === 1) {
-			box1 = color;
-		} else {
-			box2 = color;
-		}
-		if (box1 && box2) {
-			fuseColors();
-		}
-	};
 
 	const fuseColors = () => {
 		if (box1 && box2) {
@@ -89,6 +77,53 @@
 		};
 	};
 
+	const handleTouchStart = (color) => {
+		return (e) => {
+			e.preventDefault();
+			const touch = e.touches[0];
+			const element = e.target;
+			element.style.position = 'fixed';
+			element.style.left = `${touch.clientX - element.offsetWidth / 2}px`;
+			element.style.top = `${touch.clientY - element.offsetHeight / 2}px`;
+			element.style.zIndex = '1';
+			element.dataset.color = JSON.stringify(color);
+		};
+	};
+
+	const handleTouchMove = (e) => {
+		e.preventDefault();
+		const touch = e.touches[0];
+		const element = e.target;
+		element.style.position = 'fixed';
+		element.style.left = `${touch.clientX - element.offsetWidth / -100}px`;
+		element.style.top = `${touch.clientY - element.offsetHeight / 2}px`;
+		const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+		if (targetElement && targetElement.classList.contains('box')) {
+			const color = JSON.parse(element.dataset.color);
+			handleDrop(targetElement.dataset.box, color);
+		}
+	};
+
+	const handleTouchEnd = (e) => {
+		e.preventDefault();
+		const element = e.target;
+		element.style.position = '';
+		element.style.left = '';
+		element.style.top = '';
+		element.style.zIndex = '';
+	};
+
+	const handleDrop = (box, color) => {
+		if (box === '1') {
+			box1 = color;
+		} else if (box === '2') {
+			box2 = color;
+		}
+		if (box1 && box2) {
+			fuseColors();
+		}
+	};
+
 	const handleDragOver = (e) => {
 		e.preventDefault();
 	};
@@ -116,10 +151,13 @@
 	<div class="colors grid">
 		{#each colors as color}
 			<div
-				class="color s3"
+				class="color s3 color-box"
 				style="background-color: {color.color}"
 				draggable="true"
 				ondragstart={handleDragStart(color)}
+				ontouchstart={handleTouchStart(color)}
+				ontouchmove={handleTouchMove}
+				ontouchend={handleTouchEnd}
 			>
 				{color.icon}
 			</div>
@@ -130,12 +168,14 @@
 		<div
 			class="box"
 			style="background-color: {box1 ? box1.color : ''}"
+			data-box="1"
 			ondragover={handleDragOver}
 			ondrop={handleDropBox(1)}
 		></div>
 		<div
 			class="box"
 			style="background-color: {box2 ? box2.color : ''}"
+			data-box="2"
 			ondragover={handleDragOver}
 			ondrop={handleDropBox(2)}
 		></div>
@@ -189,6 +229,10 @@
 		justify-content: center;
 		align-items: center;
 		transition: background-color 0.5s ease;
+	}
+
+	.color-box {
+		touch-action: none;
 	}
 
 	.result {
