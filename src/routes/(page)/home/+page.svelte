@@ -43,7 +43,7 @@
 				image={BooksIcon}
 				class="bg-color-lavender"
 				imageAlt="books "
-				title="Barasahan"
+				title="Barasahon"
 				translated="Library"
 				navigation="library"
 			/>

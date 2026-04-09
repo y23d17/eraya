@@ -169,7 +169,7 @@
 
 	/* PLAYFUL COLORS */
 	:global(.color-playful-red) {
-		background-color: #f44336;
+		background-color: #ef5350;
 	}
 	:global(.color-playful-pink) {
 		background-color: #e91e63;
@@ -184,7 +184,7 @@
 		background-color: #3f51b5;
 	}
 	:global(.color-playful-blue) {
-		background-color: #2196f3;
+		background-color: #42a5f5;
 	}
 	:global(.color-playful-light-blue) {
 		background-color: #03a9f4;
@@ -205,7 +205,7 @@
 		background-color: #cddc39;
 	}
 	:global(.color-playful-yellow) {
-		background-color: #ffeb3b;
+		background-color: #ffca28;
 	}
 	:global(.color-playful-amber) {
 		background-color: #ffc107;

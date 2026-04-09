@@ -37,6 +37,12 @@
 			options: ['Pula', 'Asul', 'Berde', 'Itom'],
 			answer: 'Asul',
 			bg: '#2196f3'
+		},
+		{
+			question: 'What to say if someone gave you a present or helped you?',
+			options: ['Mapanaw ako', 'Salamat', 'Mayad nga aga', 'Paambit'],
+			answer: 'Salamat',
+			bg: '#ef5350'
 		}
 	];
 
@@ -72,6 +78,7 @@
 	</div>
 	<div class="pill-bubble">
 		<h1 class="title">{item.question}</h1>
+		<div class="medium-space"></div>
 		{#each item.options as option}
 			<div
 				class="option"
@@ -144,7 +151,7 @@
 
 	.pill-bubble {
 		background: white;
-		padding: 1.5rem 4rem;
+		padding: 1.5rem 2rem;
 		border-radius: 60px;
 		box-shadow: 0 10px 0px rgba(0, 0, 0, 0.1);
 		border: 8px solid #fce4ec;
@@ -152,7 +159,7 @@
 	}
 
 	.title {
-		font-size: 2.4rem;
+		font-size: calc(1.7rem + 1vw);
 		margin: 0;
 		color: #333;
 		line-height: 1.1;
@@ -186,7 +193,9 @@
 
 	.ui-layer {
 		position: absolute;
-		bottom: 8%;
+		top: 1;
+		bottom: 0;
+		padding: 1rem;
 		width: 90%;
 		display: flex;
 		justify-content: center;
@@ -211,6 +220,34 @@
 		}
 		50% {
 			transform: rotate(5deg);
+		}
+	}
+
+	@media screen and (max-width: 360px) {
+		.title {
+			font-size: calc(1.2rem + 1vw);
+		}
+
+		.option {
+			font-size: 1.2rem;
+		}
+
+		.result {
+			font-size: 1.7rem;
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		.title {
+			font-size: calc(1.7rem + 1vw);
+		}
+
+		.option {
+			font-size: 2rem;
+		}
+
+		.result {
+			font-size: 1.7rem;
 		}
 	}
 </style>

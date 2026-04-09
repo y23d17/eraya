@@ -26,6 +26,20 @@
 			icon: '👵👴',
 			example: 'Palangga ko si Lola kag si Lolo.',
 			bg: '#81c784' // Soft Green
+		},
+		{
+			name: 'Manong',
+			english: 'Brother',
+			icon: '👦',
+			example: 'Si manong gasipal kang basketball.',
+			bg: '#03a9f4' // Blue
+		},
+		{
+			name: 'Manang',
+			english: 'Sister',
+			icon: '👧',
+			example: 'Gasaot si manag.',
+			bg: '#e91e63' // Pink
 		}
 	];
 

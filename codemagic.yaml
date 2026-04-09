@@ -7,8 +7,6 @@ workflows:
     environment:
       groups:
         - qbot
-      android_signing:
-        - qbot24
     scripts:
       - name: Set up keystore
         script: |

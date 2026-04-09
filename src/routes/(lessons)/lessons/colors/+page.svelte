@@ -16,16 +16,37 @@
 		{
 			name: 'Asul',
 			english: 'Blue',
-			icon: '🦋',
-			example: 'Alibangbang (Butterfly)',
+			icon: '💧',
+			example: 'Tubig (Water)',
 			bg: '#42a5f5'
 		},
 		{
 			name: 'Kanaryo',
 			english: 'Yellow',
-			icon: '🌻',
-			example: 'Sunflower',
+			icon: '☀️',
+			example: 'Adlaw (Sun)',
 			bg: '#ffca28'
+		},
+		{
+			name: 'Kahel',
+			english: 'Orange',
+			icon: '🏀',
+			example: 'Bola (Ball)',
+			bg: '#ff9800'
+		},
+		{
+			name: 'Puti',
+			english: 'White',
+			icon: '☁️',
+			example: 'Gal-um (Cloud)',
+			bg: '#dedede'
+		},
+		{
+			name: 'Itum',
+			english: 'Black',
+			icon: '💣💣',
+			example: 'Bomba (Bomb)',
+			bg: '#333333'
 		}
 	];
 
@@ -123,6 +144,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -131,6 +153,7 @@
 		font-weight: 800;
 		text-transform: uppercase;
 		letter-spacing: 2px;
+		font-family: Quicksand Bold;
 		font-size: 0.9rem;
 	}
 
@@ -141,6 +164,7 @@
 		border-radius: 20px;
 		color: white;
 		font-size: 1.1rem;
+		font-family: Quicksand Book;
 		backdrop-filter: blur(5px);
 	}
 

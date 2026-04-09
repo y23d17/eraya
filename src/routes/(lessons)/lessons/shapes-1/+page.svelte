@@ -22,11 +22,25 @@
 			bg: '#ba68c8' // Purple
 		},
 		{
-			name: 'Triyangulo',
+			name: 'Trayanggulo',
 			english: 'Triangle',
 			icon: '🔺',
 			example: 'Apa (Ice Cream Cone)',
 			bg: '#f06292' // Pink
+		},
+		{
+			name: 'Rektanggulo',
+			english: 'Rectangle',
+			icon: '📘',
+			example: 'Libro (Book)',
+			bg: '#f44336' // Red
+		},
+		{
+			name: 'Dayamon',
+			english: 'Diamond',
+			icon: '🔶',
+			example: 'Dayamon (Diamond) ',
+			bg: '#4caf50' // Gren
 		}
 	];
 
@@ -145,6 +159,7 @@
 		color: white;
 		font-size: 1.1rem;
 		font-family: Quicksand Book;
+		display: none;
 	}
 
 	/* Navigation UI */

@@ -22,11 +22,25 @@
 			bg: '#ba68c8' // Purple
 		},
 		{
-			name: 'Triyangulo',
+			name: 'Trayanggulo',
 			english: 'Triangle',
 			icon: '🔺',
-			example: 'Panyô (Handkerchief)',
+			example: 'Apa (Ice Cream Cone)',
 			bg: '#f06292' // Pink
+		},
+		{
+			name: 'Rektanggulo',
+			english: 'Rectangle',
+			icon: '📘',
+			example: 'Libro (Book)',
+			bg: '#f44336' // Red
+		},
+		{
+			name: 'Dayamon',
+			english: 'Diamond',
+			icon: '🔶',
+			example: 'Dayamon (Diamond) ',
+			bg: '#4caf50' // Gren
 		}
 	];
 
@@ -124,6 +138,7 @@
 		margin: 0;
 		color: #333;
 		line-height: 1;
+		font-family: Fredoka Regular;
 	}
 
 	.english-sub {
@@ -132,6 +147,7 @@
 		font-weight: 800;
 		text-transform: uppercase;
 		letter-spacing: 2px;
+		font-family: Quicksand Bold;
 		font-size: 0.9rem;
 	}
 
@@ -141,6 +157,7 @@
 		padding: 10px 20px;
 		border-radius: 20px;
 		color: white;
+		font-family: Quicksand Book;
 		font-size: 1.1rem;
 	}
 
