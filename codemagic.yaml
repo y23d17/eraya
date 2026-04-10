@@ -40,11 +40,20 @@ workflows:
           npx vite build
       - name: 'Installing Cordova SDK'
         script: |
+          npm install cordova@latest
+      - name: 'Setup Cordova SDK project'
+        script: |
+          cordova add qubonic.qbot.eraya Eraya build
           cd build
+      - name: 'Installing Cordova SDK dependencies'
+        script: |
           npm install
           npm ci
           cvm install 9.0.0
           cvm use 9.0.0
+      - name: 'Install Cordova SDK plugins'
+        script: |
+          cordova plugin add cordova-plugin-ionic-webview
       - name: 'Setup Android CordovaSDK project'
         script: |
           cordova platform remove android --no-save
