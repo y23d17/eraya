@@ -8,7 +8,7 @@ workflows:
       vars:
         CORDOVA_DIR: build
       android_signing:
-        - qbot
+        - qbot24
       groups:
         - qbot
     scripts:
