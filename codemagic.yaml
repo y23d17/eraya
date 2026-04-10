@@ -35,16 +35,16 @@ workflows:
                 # https://www.better-auth.com/docs/authentication/github
                 GITHUB_CLIENT_ID=""
                 GITHUB_CLIENT_SECRET=""' >> .env
-      - name: 'Running Vite Build'
-        script: |
-          npx vite build
       - name: 'Installing Cordova SDK'
         script: |
-          npm install cordova@latest
+          npm install -g cordova
       - name: 'Setup Cordova SDK project'
         script: |
           cordova create build qubonic.qbot.eraya Eraya
           cd build
+      - name: 'Running Vite Build'
+        script: |
+          npx vite build
       - name: 'Installing Cordova SDK dependencies'
         script: |
           npm install
