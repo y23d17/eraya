@@ -55,17 +55,17 @@ workflows:
           cvm use 9.0.0
       - name: 'Install Cordova SDK plugins'
         script: |
-          cordova plugin add cordova-plugin-ionic-webview cordova-plugin-screen-orientation cordova-plugin-splashscreen cordova-plugin-whitelist es6-promise-plugin
+          npx cordova plugin add cordova-plugin-ionic-webview cordova-plugin-screen-orientation cordova-plugin-splashscreen cordova-plugin-whitelist es6-promise-plugin
       - name: 'Setup Android CordovaSDK project'
         script: |
-          cordova platform remove android --no-save
-          cordova platform add android \
+          npx cordova platform remove android --no-save
+          npx cordova platform add android \
           --confirm \
           --no-interactive \
           --noresources
       - name: 'Set up Configurations for Eraya Builds'
         script: |
-          rm confix.xml
+          rm config.xml
           echo "<?xml version='1.0' encoding='utf-8'?> <widget id="qubonic.qbot.eraya" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"><name>Eraya</name><description>Learning application platform for Kinaray-a language.</description><author email="yerenzter@yandex.com" href="https://yerenzter.github.io">QBOT-DTX</author><content src="index.html"><access origin="*"><allow-navigation href="http://localhost/*"><allow-navigation href="https://localhost/*"><allow-navigation href="app://localhost/*"><allow-navigation href="file:///android_asset/*"><allow-navigation href="file:///android_asset/www/*"><allow-intent href="http://*/*"><allow-intent href="https://*/*"><allow-intent href="tel:*"><allow-intent href="sms:*"><allow-intent href="mailto:*"><allow-intent href="geo:*"><preference name="Fullscreen" value="true"><preference name="ScrollEnabled" value="false"><preference name="AllowInlineMediaPlayback" value="true"><preference name="BackupWebStorage" value="none"><preference name="Orientation" value="default"><platform name="android"><preference name="Scheme" value="http"><preference name="Hostname" value="localhost"><preference name="AndroidInsecureHttpAllowed" value="true"><allow-navigation href="http://localhost/*"><icon src="www/icons/android-icon-36.png" density="ldpi"><icon src="www/icons/android-icon-48.png" density="mdpi"><icon src="www/icons/android-icon-72.png" density="hdpi"><icon src="www/icons/android-icon-96.png" density="xhdpi"><icon src="www/icons/android-icon-144.png" density="xxhdpi"><icon src="www/icons/android-icon-192.png" density="xxxhdpi"><preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icons/android-windowSplashScreenAnimatedIcon.png"><preference name="AndroidWindowSplashScreenBackground" value="#000000"></platform><platform name="electron"><icon src="www/icons/android-icon-36.png" density="ldpi"><icon src="www/icons/android-icon-48.png" density="mdpi"><icon src="www/icons/android-icon-72.png" density="hdpi"><icon src="www/icons/android-icon-96.png" density="xhdpi"><icon src="www/icons/android-icon-144.png" density="xxhdpi"><icon src="www/icons/android-icon-192.png" density="xxxhdpi"></platform><platform name="ios"><preference name="Scheme" value="app"></platform></widget>" >> config.xml
           cd platforms/android/app/src/main/java/qubonic/qbot/eraya
           rm MainActivity.java
