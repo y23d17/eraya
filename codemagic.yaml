@@ -25,6 +25,19 @@ workflows:
           npm ci
           cvm install 9.0.0
           cvm use 9.0.0
+          echo '# Drizzle
+                DATABASE_URL=""
+
+                ORIGIN="http://localhost:5173"
+
+                # Better Auth
+                # For production use 32 characters and generated with high entropy
+                # https://www.better-auth.com/docs/installation
+                BETTER_AUTH_SECRET="bcc0fe70-f17f-4b35-b894-6404fa698428"
+                # GitHub OAuth
+                # https://www.better-auth.com/docs/authentication/github
+                GITHUB_CLIENT_ID=""
+                GITHUB_CLIENT_SECRET=""'
       - name: 'Running Vite Build'
         script: |
           npx vite build
