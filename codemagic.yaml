@@ -44,11 +44,10 @@ workflows:
       - name: 'Moving to build directory'
         script: |
           cd build
-      - name: 'Installing Cordova SDK'
+      - name: 'Installin Build dependencies'
         script: |
           npm install
-          npm install cordova@latest
-      - name: 'Setup Android CordovaSDK project...'
+      - name: 'Setup Android CordovaSDK project'
         script: |
           cordova platform remove android --no-save
           cordova platform add android \
