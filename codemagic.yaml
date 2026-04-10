@@ -46,6 +46,7 @@ workflows:
           cd build
       - name: 'Installing Cordova SDK'
         script: |
+          npm install
           npm install cordova@latest
       - name: 'Setup Android CordovaSDK project...'
         script: |
