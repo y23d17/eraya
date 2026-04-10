@@ -41,11 +41,9 @@ workflows:
       - name: 'Running Vite Build'
         script: |
           npx vite build
-      - name: 'Moving to build directory'
+      - name: 'Installing Cordova SDK'
         script: |
           cd build
-      - name: 'Installin Build dependencies'
-        script: |
           npm install
       - name: 'Setup Android CordovaSDK project'
         script: |
