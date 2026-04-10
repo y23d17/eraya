@@ -27,7 +27,7 @@ workflows:
           cvm use 9.0.0
       - name: 'Running Vite Build'
         script: |
-          npm vite build
+          npx vite build
       - name: 'Moving to build directory'
         script: |
           cd build
