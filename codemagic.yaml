@@ -13,7 +13,7 @@ workflows:
           echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
       - name: Installing Bun
         script: |
-          curl -fsSL https://bun.sh/install | bash
+          curl -fsSL https://bun.sh/install | zsh
           export BUN_INSTALL="$HOME/.bun" 
           export PATH="$BUN_INSTALL/bin:$PATH"
           source $HOME/.zshrc
