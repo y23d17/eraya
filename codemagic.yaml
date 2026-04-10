@@ -40,7 +40,7 @@ workflows:
           npm install -g cordova
       - name: 'Create Cordova SDK project'
         script: |
-          cordova create build qubonic.qbot.eraya Eraya
+          npx cordova create build qubonic.qbot.eraya Eraya
           ls
       - name: 'Running Vite Build'
         script: |
