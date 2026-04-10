@@ -40,7 +40,7 @@ workflows:
           npm install -g cordova
       - name: 'Create Cordova SDK project'
         script: |
-          npx cordova create build qubonic.qbot.eraya Eraya
+          cordova create build qubonic.qbot.eraya Eraya
           ls
       - name: 'Running Vite Build'
         script: |
@@ -48,6 +48,7 @@ workflows:
       - name: 'Installing Cordova SDK dependencies'
         script: |
           cd build
+          cordova prepare
           ls
           npm install
           npm ci
@@ -55,11 +56,11 @@ workflows:
           cvm use 9.0.0
       - name: 'Install Cordova SDK plugins'
         script: |
-          npx cordova plugin add cordova-plugin-ionic-webview cordova-plugin-screen-orientation cordova-plugin-splashscreen cordova-plugin-whitelist es6-promise-plugin
+          cordova plugin add cordova-plugin-ionic-webview cordova-plugin-screen-orientation cordova-plugin-splashscreen cordova-plugin-whitelist es6-promise-plugin
       - name: 'Setup Android CordovaSDK project'
         script: |
-          npx cordova platform remove android --no-save
-          npx cordova platform add android \
+          cordova platform remove android --no-save
+          cordova platform add android \
           --confirm \
           --no-interactive \
           --noresources
