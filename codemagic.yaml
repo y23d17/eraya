@@ -26,7 +26,7 @@ workflows:
           cvm install 9.0.0
           cvm use 9.0.0
           echo '# Drizzle
-                DATABASE_URL=""
+                DATABASE_URL=file:local.db
 
                 ORIGIN="http://localhost:5173"
 
