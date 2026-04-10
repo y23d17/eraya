@@ -43,7 +43,7 @@ workflows:
           npm install cordova@latest
       - name: 'Setup Cordova SDK project'
         script: |
-          cordova add build qubonic.qbot.eraya Eraya
+          cordova create build qubonic.qbot.eraya Eraya
           cd build
       - name: 'Installing Cordova SDK dependencies'
         script: |
