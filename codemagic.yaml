@@ -11,21 +11,24 @@ workflows:
       - name: 'Setup keystore'
         script: |
           echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
-      - name: 'Installing Node'
+      - name: Installing Bun
         script: |
-          npm install
-          npm ci
+          curl -fsSL https://bun.sh/install | bash
+      - name: Installing packages & dependencies
+        script: |
+          bun install
+          bun ci
           cvm install 9.0.0
           cvm use 9.0.0
       - name: 'Running Vite Build'
         script: |
-          npm build
+          bun run build
       - name: 'Moving to build directory'
         script: |
           cd build
       - name: 'Installing Cordova SDK'
         script: |
-          npm install cordova@latest
+          bun install cordova@latest
       - name: 'Setup Android CordovaSDK project...'
         script: |
           cordova platform remove android --no-save
@@ -33,9 +36,9 @@ workflows:
           --confirm \
           --no-interactive \
           --noresources
-      - name: 'Building Android app...'
+      - name: 'Building Android app'
         script: cordova build android
-      - name: 'Signing APK...'
+      - name: 'Signing APK'
         script: |
           APK_PATH=$(find platforms/android/app/build/outputs/apk/debug -name "*.apk" | head -1)
           jarsigner \
