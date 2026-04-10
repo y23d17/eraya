@@ -37,7 +37,7 @@ workflows:
                 # GitHub OAuth
                 # https://www.better-auth.com/docs/authentication/github
                 GITHUB_CLIENT_ID=""
-                GITHUB_CLIENT_SECRET=""'
+                GITHUB_CLIENT_SECRET=""' >> .env
       - name: 'Running Vite Build'
         script: |
           npx vite build
