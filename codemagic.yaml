@@ -17,7 +17,7 @@ workflows:
       - name: Running Bun scripts
         script: |
           echo 'export BUN_INSTALL="$HOME/.bun" \ export PATH="$BUN_INSTALL/bin:$PATH"' >> .zshrc
-          source $HOME/.zshrc
+          source .zshrc
       - name: Installing packages & dependencies
         script: |
           bun install
