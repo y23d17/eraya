@@ -123,6 +123,7 @@ workflows:
             </platform>
           </widget>
           EOF
+          cd platforms/android/app/src/main/java/qubonic/qbot/eraya
           rm MainActivity.java
           cat <<EOF > MainActivity.java
           package qubonic.qbot.eraya;
@@ -141,7 +142,6 @@ workflows:
               }
           }
           EOF
-          cd $CORDOVA_DIR
       - name: 'Building Android app'
         script: |
           cd $CORDOVA_DIR
