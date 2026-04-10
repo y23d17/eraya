@@ -21,19 +21,19 @@ workflows:
           source $HOME/.zshrc
       - name: Installing packages & dependencies
         script: |
-          bun install
-          bun ci
+          npm install
+          npm ci
           cvm install 9.0.0
           cvm use 9.0.0
       - name: 'Running Vite Build'
         script: |
-          bun vite build
+          npm vite build
       - name: 'Moving to build directory'
         script: |
           cd build
       - name: 'Installing Cordova SDK'
         script: |
-          bun install cordova@latest
+          npm install cordova@latest
       - name: 'Setup Android CordovaSDK project...'
         script: |
           cordova platform remove android --no-save
