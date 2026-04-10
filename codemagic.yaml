@@ -38,15 +38,15 @@ workflows:
       - name: 'Installing Cordova SDK'
         script: |
           npm install -g cordova
-      - name: 'Setup Cordova SDK project'
+      - name: 'Create Cordova SDK project'
         script: |
           cordova create build qubonic.qbot.eraya Eraya
-          cd build
       - name: 'Running Vite Build'
         script: |
           npx vite build
       - name: 'Installing Cordova SDK dependencies'
         script: |
+          cd build
           npm install
           npm ci
           cvm install 9.0.0
