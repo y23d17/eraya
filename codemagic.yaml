@@ -22,9 +22,6 @@ workflows:
       - name: Installing packages & dependencies
         script: |
           npm install
-          npm ci
-          cvm install 9.0.0
-          cvm use 9.0.0
           echo '# Drizzle
                 DATABASE_URL=file:local.db
 
@@ -45,6 +42,9 @@ workflows:
         script: |
           cd build
           npm install
+          npm ci
+          cvm install 9.0.0
+          cvm use 9.0.0
       - name: 'Setup Android CordovaSDK project'
         script: |
           cordova platform remove android --no-save
