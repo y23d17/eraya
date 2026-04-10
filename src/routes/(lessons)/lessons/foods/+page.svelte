@@ -24,16 +24,30 @@
 		{
 			name: 'Sabaw',
 			english: 'Soup',
-			icon: '🥣',
+			icon: '🍲',
 			example: 'Mainit nga sabaw.',
 			bg: '#4fc3f7' // Soft Blue
 		},
 		{
-			name: 'Prutas',
-			english: 'Fruit',
+			name: 'Saging',
+			english: 'Banana',
 			icon: '🍌',
-			example: 'Hamis nga prutas.',
+			example: 'Tam-is nga saging.',
 			bg: '#f06292' // Signature Pink
+		},
+		{
+			name: 'Tinapay',
+			english: 'Bread',
+			icon: '🍞',
+			example: 'Malum-ok nga tinapay.',
+			bg: '#ffc107' // Amber
+		},
+		{
+			name: 'Itlog',
+			english: 'Egg',
+			icon: '🍳',
+			example: 'Pinirito nga itlog.',
+			bg: '#8bc34a' // Lime Green
 		}
 	];
 

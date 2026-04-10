@@ -1,16 +1,14 @@
 workflows:
   android:
-    name: 'Android CordovaSDK Dev Workflow'
+    name: 'Android'
     max_build_duration: 120
     instance_type: mac_mini_m2
 
     environment:
       groups:
         - qbot
-      android_signing:
-        - qbot24
     scripts:
-      - name: Set up keystore
+      - name: 'Setup keystore'
         script: |
           echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
       - name: 'Installing Node'
@@ -21,11 +19,12 @@ workflows:
           cvm use 9.0.0
       - name: 'Running Vite Build'
         script: |
-          npm dev
+          npm run build
       - name: 'Moving to build directory'
         script: |
           cd build
-      - name: 'Installing Cordova SDK'
+      - name:
+       'Installing Cordova SDK'
         script: |
           npm install cordova@latest
       - name: 'Setup Android CordovaSDK project...'

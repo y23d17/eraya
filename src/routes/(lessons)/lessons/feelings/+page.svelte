@@ -18,7 +18,7 @@
 			name: 'Masubo',
 			english: 'Sad',
 			icon: '😢',
-			phrase: 'Masubo ang akon abyan.',
+			phrase: 'Masubo ang akon libayon.',
 			bg: '#64b5f6' // Calm Blue
 		},
 		{
@@ -34,6 +34,27 @@
 			icon: '😨',
 			phrase: 'Hadluk ako sa kilat.',
 			bg: '#9575cd' // Nervous Purple
+		},
+		{
+			name: 'Kadlaw',
+			english: 'Laugh',
+			icon: '😂',
+			phrase: 'Ga kadlaw ako.',
+			bg: '#ffca28' // Yellow
+		},
+		{
+			name: 'Yuhum',
+			english: 'Smile',
+			icon: '😄',
+			phrase: 'Ga yuhum ako samtang nakita ta ikaw.',
+			bg: '#ffc107' // Amber
+		},
+		{
+			name: 'Hibi',
+			english: 'Cry',
+			icon: '😭',
+			phrase: 'Nag hibi ako kay naba buol ko sa exam.',
+			bg: '#03a9f4' // Light blue
 		}
 	];
 

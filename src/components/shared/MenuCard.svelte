@@ -4,9 +4,14 @@
 	let { image, imageAlt, title, translated, navigation, class: className, ...props } = $props();
 </script>
 
-<article class="s6 m4 center-align ripple {className}" onclick={() => goto(`/${navigation}`)}>
+<article
+	class="s6 m4 center-align ripple {className}"
+	onclick={() => goto(`/${navigation}`)}
+	{...props}
+>
 	<center><img src={image} alt={imageAlt} width={96} /></center>
 	<h4>{title}</h4>
+	<br />
 	<em>({translated})</em>
 </article>
 
@@ -20,6 +25,7 @@
 
 	article > h4 {
 		font-family: Fredoka Regular;
+		font-size: calc(1.45rem + 1vw);
 		color: #ffffff;
 	}
 
