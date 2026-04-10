@@ -16,7 +16,8 @@ workflows:
           curl -fsSL https://bun.sh/install | bash
       - name: Running Bun scripts
         script: |
-          echo 'export BUN_INSTALL="$HOME/.bun" \ export PATH="$BUN_INSTALL/bin:$PATH"' >> .zshrc
+          echo 'export BUN_INSTALL="$HOME/.bun"
+          export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.zshrc
           source .zshrc
       - name: Installing packages & dependencies
         script: |
