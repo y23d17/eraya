@@ -158,4 +158,4 @@ workflows:
           -keypass $CM_KEY_PASSWORD \
           $APK_PATH $CM_KEY_ALIAS
     artifacts:
-      - platforms/android/app/build/outputs/**/*.apk
+      - platforms/android/app/build/outputs/apk/debug/*.apk
