@@ -1,0 +1,163 @@
+workflows:
+  android:
+    name: 'Android'
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    environment:
+      vars:
+        CORDOVA_DIR: build
+      android_signing:
+        - qbot24
+      groups:
+        - qbot
+    scripts:
+      - name: 'Setup keystore'
+        script: |
+          echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
+      - name: Installing Bun
+        script: |
+          curl -fsSL https://bun.sh/install | bash
+      - name: Running Bun scripts
+        script: |
+          echo 'export BUN_INSTALL="$HOME/.bun"
+          export PATH="$BUN_INSTALL/bin:$PATH"' >> $HOME/.zshrc
+          source $HOME/.zshrc
+      - name: Installing packages & dependencies
+        script: |
+          npm install
+          echo '# Drizzle
+                DATABASE_URL=file:local.db
+
+                ORIGIN="http://localhost:5173"
+
+                # Better Auth
+                # For production use 32 characters and generated with high entropy
+                # https://www.better-auth.com/docs/installation
+                BETTER_AUTH_SECRET="bcc0fe70-f17f-4b35-b894-6404fa698428"
+                # GitHub OAuth
+                # https://www.better-auth.com/docs/authentication/github
+                GITHUB_CLIENT_ID=""
+                GITHUB_CLIENT_SECRET=""' >> .env
+      - name: 'Installing Cordova SDK'
+        script: |
+          npm install -g cordova
+      - name: 'Create Cordova SDK project'
+        script: |
+          cordova create build qubonic.qbot.eraya Eraya
+          ls
+      - name: 'Running Vite Build'
+        script: |
+          npx vite build
+      - name: 'Installing Cordova SDK dependencies'
+        script: |
+          cd $CORDOVA_DIR
+          cordova prepare
+          ls
+          npm install
+          npm ci
+          cvm install 9.0.0
+          cvm use 9.0.0
+      - name: 'Install Cordova SDK plugins'
+        script: |
+          cd $CORDOVA_DIR
+          cordova plugin add cordova-plugin-ionic-webview cordova-plugin-screen-orientation cordova-plugin-splashscreen cordova-plugin-whitelist es6-promise-plugin
+      - name: 'Setup Android CordovaSDK project'
+        script: |
+          cd $CORDOVA_DIR
+          cordova platform remove android --no-save
+          cordova platform add android \
+          --confirm \
+          --no-interactive \
+          --noresources
+      - name: 'Set up Configurations for Eraya Builds'
+        script: |
+          cd $CORDOVA_DIR
+          rm config.xml
+          cat <<EOF > config.xml
+          <?xml version='1.0' encoding='utf-8'?>
+          <widget id="qubonic.qbot.eraya" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+            <name>Eraya</name>
+            <description>Learning application platform for Kinaray-a language.</description>
+            <author email="yerenzter@yandex.com" href="https://yerenzter.github.io">QBOT-DTX</author>
+            <content src="index.html" />
+            <access origin="*" />
+            <allow-navigation href="http://localhost/*" />
+            <allow-navigation href="https://localhost/*" />
+            <allow-navigation href="app://localhost/*" />
+            <allow-navigation href="file:///android_asset/*" />
+            <allow-navigation href="file:///android_asset/www/*" />
+            <allow-intent href="http://*/*" />
+            <allow-intent href="https://*/*" />
+            <allow-intent href="tel:*" />
+            <allow-intent href="sms:*" />
+            <allow-intent href="mailto:*" />
+            <allow-intent href="geo:*" />
+            <preference name="Fullscreen" value="true" />
+            <preference name="ScrollEnabled" value="false" />
+            <preference name="AllowInlineMediaPlayback" value="true" />
+            <preference name="BackupWebStorage" value="none" />
+            <preference name="Orientation" value="default" />
+            <platform name="android">
+              <preference name="Scheme" value="http" />
+              <preference name="Hostname" value="localhost" />
+              <preference name="AndroidInsecureHttpAllowed" value="true" />
+              <allow-navigation href="http://localhost/*" />
+              <icon src="www/icons/android-icon-36.png" density="ldpi" />
+              <icon src="www/icons/android-icon-48.png" density="mdpi" />
+              <icon src="www/icons/android-icon-72.png" density="hdpi" />
+              <icon src="www/icons/android-icon-96.png" density="xhdpi" />
+              <icon src="www/icons/android-icon-144.png" density="xxhdpi" />
+              <icon src="www/icons/android-icon-192.png" density="xxxhdpi" />
+              <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icons/android-windowSplashScreenAnimatedIcon.png"/>
+              <preference name="AndroidWindowSplashScreenBackground" value="#000000" />
+            </platform>
+            <platform name="electron">
+              <icon src="www/icons/android-icon-36.png" density="ldpi" />
+              <icon src="www/icons/android-icon-48.png" density="mdpi" />
+              <icon src="www/icons/android-icon-72.png" density="hdpi" />
+              <icon src="www/icons/android-icon-96.png" density="xhdpi" />
+              <icon src="www/icons/android-icon-144.png" density="xxhdpi" />
+              <icon src="www/icons/android-icon-192.png" density="xxxhdpi" />
+            </platform>
+            <platform name="ios">
+              <preference name="Scheme" value="app" />
+            </platform>
+          </widget>
+          EOF
+          cd platforms/android/app/src/main/java/qubonic/qbot/eraya
+          rm MainActivity.java
+          cat <<EOF > MainActivity.java
+          package qubonic.qbot.eraya;
+          import android.os.Bundle;
+          import org.apache.cordova.*;
+
+          public class MainActivity extends CordovaActivity {
+              @Override
+              public void onCreate(Bundle savedInstanceState) {
+                  super.onCreate(savedInstanceState);
+                  Bundle extras = getIntent().getExtras();
+                  if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
+                      moveTaskToBack(true);
+                  }
+                  loadUrl("http://localhost/");
+              }
+          }
+          EOF
+      - name: 'Building Android app'
+        script: |
+          cd $CORDOVA_DIR
+          cordova build android
+      - name: 'Signing APK'
+        script: |
+          cd $CORDOVA_DIR
+          APK_PATH=$(find platforms/android/app/build/outputs/apk/debug -name "*.apk" | head -1)
+          jarsigner \
+          -sigalg SHA1withRSA \
+          -digestalg SHA1 \
+          -keystore $CM_KEYSTORE_PATH \
+          -storepass $CM_KEYSTORE_PASSWORD \
+          -keypass $CM_KEY_PASSWORD \
+          $APK_PATH $CM_KEY_ALIAS
+    artifacts:
+      - $CORDOVA_DIR/platforms/android/app/build/outputs/apk/debug/*.apk
