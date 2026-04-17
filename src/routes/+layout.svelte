@@ -26,5 +26,5 @@
 <SystemCore />
 <BackgroundColor />
 
-<svelte:head><link rel="icon" href={favicon} /> <title>eRaya App</title></svelte:head>
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
 {@render children()}
