@@ -12,7 +12,7 @@ Core development project for learning platform of eRaya based on SvelteKit and V
 - Android Studio
 - Java Runtime Environment
 
-## setup & Installation
+## Setup & Installation
 1. **Cloning a repository**
 ```bash
 git clone https://github.com/y23d17/eraya.git
@@ -96,4 +96,4 @@ _**QBOT** (The Quintets, BEAAM/BAYAE, The O-Team, The Core Dump) is the name of 
 
 _The golden **E** with red emblem and brown ring is trademark of QBOT-DTE/24 & Qubonic Arts & Software, AYCQ._
 
-_@2024-2026 **eRaya**. Developed by QBOR-DTE/24 under the trademark of Qubonic Arts & Software, AYCQ._
+_@2024-2026 **eRaya**. Developed by QBOT-DTE/24 under the trademark of Qubonic Arts & Software, AYCQ._
