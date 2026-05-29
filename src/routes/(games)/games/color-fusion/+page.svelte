@@ -232,9 +232,9 @@
 		transition: background-color 0.5s ease;
 	}
 
-	.color-box {
+	/* .color-box {
 		touch-action: none;
-	}
+	} */
 
 	.result {
 		margin-top: 20px;
